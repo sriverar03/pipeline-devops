@@ -10,11 +10,7 @@ def call(){
       	str = params.stage.split(';');
   	println str[1]
 	
-	def buid(){
-		stage('TestBuild') {            
-			bat "gradle Build"
-		}
-	}
+	
 	
 	
 	if(str[0] == 'build'){	
@@ -56,5 +52,11 @@ def call(){
         
 
 }
+
+def build(){
+		stage('TestBuild') {            
+			bat "gradle Build"
+		}
+	}
 
 return this;
