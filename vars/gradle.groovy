@@ -10,7 +10,9 @@ def call(){
       	str = params.stage.split(';')
   	println str.size()
 	
-	if(str.size() != 0)
+	println str.contains('test')
+	
+	/*if(str.size() != 0)
 	{	
 		stage('TestBuild') {            
 			bat "gradle Build"
@@ -38,7 +40,7 @@ def call(){
 	else
 	{
 		println 'stage vacio'
-	}
+	}*/
         
         
 
