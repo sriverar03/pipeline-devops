@@ -16,6 +16,7 @@ def call(){
 
 	parameters {
   		choice choices: ['gradle', 'maven'], description: 'indicar herramienta de construccion', name: 'builTools'
+		string(defaultValue: 'scriptcrunch', name: 'prueba', trim: true)
 		
 		
 	}
@@ -28,7 +29,7 @@ def call(){
 
 					if(params.builTools == 'gradle')
 					{
-					   gradle(env.productionServer)
+					   gradle()
 					}
 					else
 					{
