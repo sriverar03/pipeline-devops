@@ -5,9 +5,9 @@
 */
 
 def call(){
-	String[] valores = params.prueba.split(Pattern.quote(";"));
 	
-  	println valores[0]
+	
+  	println vparams.prueba
   stage('TestBuild') {            
             		bat "gradle Build"
         }
