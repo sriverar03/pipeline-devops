@@ -6,8 +6,9 @@
 
 def call(){
 	
-	
-  	println params.stage
+	String[] str;
+      	str = params.stage.split(';');
+  	println str[1]
 	
 	
 	if(params.stage == 'build'){	
