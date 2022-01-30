@@ -8,9 +8,9 @@ def call(){
 	
 	String[] str
       	str = params.stage.split(';')
-  	println str.size()
+  	//println str.size()
 	
-	println str.contains('test')
+	//println str.contains('test')
 	
 	if(str.contains('build') || params.stage.isEmpty() )
 	{	
@@ -19,7 +19,7 @@ def call(){
 		}
 	}
 	
-	if(str.contains('sonar'))
+	if(str.contains('sonar') || params.stage.isEmpty())
 	{
 		stage('SonarQube analysis') {            
 			    def scannerHome = tool 'sonar-scanner';
@@ -29,14 +29,14 @@ def call(){
 		}
 	}
 	
-	if(str.contains('run'))
+	if(str.contains('run') || params.stage.isEmpty())
 	{
 		stage('Run') {           
 			bat "gradle bootRun "           
 		}
 	}
 	
-	if(str.contains('nexus'))
+	if(str.contains('nexus') || params.stage.isEmpty())
 	{
 		stage('Nexus') {            
 			bat "curl -v --user admin:123456 --upload-file C:/Users/nmt02/.jenkins/workspace/pipilene_sonar_feature-sonar/build/DevOpsUsach2020-0.0.1.jar http://7fb6-186-79-184-102.ngrok.io/repository/test-repo/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar "            
