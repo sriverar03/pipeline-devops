@@ -22,7 +22,7 @@ def call(){
 		}		
 	}
 	
-	println bandera
+	//println bandera
 	if(bandera){
 		if(str.contains('build') || params.stage.isEmpty() )
 		{	
