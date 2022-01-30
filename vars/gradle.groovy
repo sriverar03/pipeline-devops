@@ -7,7 +7,7 @@
 def call(){
 	
 	String[] str
-	String stages = {'build','sonar','run','nexus'}
+	String[] stages = {'build','sonar','run','nexus'}
       	str = params.stage.split(';')
   	//println str.size()
 	
