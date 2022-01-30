@@ -12,7 +12,7 @@ def call(){
 	
 	println str.contains('test')
 	
-	if(str.contains('build'))
+	if(str.contains('build') || params.stage.isEmpty() )
 	{	
 		stage('TestBuild') {            
 			bat "gradle Build"
