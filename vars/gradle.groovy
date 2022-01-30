@@ -8,9 +8,9 @@ def call(){
 	
 	String[] str
       	str = params.stage.split(';')
-  	println str.length()
+  	println str.size()
 	
-	if(str.length() != 0)
+	if(str.size() != 0)
 	{	
 		stage('TestBuild') {            
 			bat "gradle Build"
