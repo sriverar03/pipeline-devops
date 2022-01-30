@@ -13,9 +13,9 @@ def call(){
 	
 	//println str.contains('test')
 	
-	for(string stg in stages) { 
-        	 println(stg); 
-      	} 
+	for (int i = 0; i < stages.size(); i++) {
+	    println stages[i]
+	}
 	
 	if(str.contains('build') || params.stage.isEmpty() )
 	{	
