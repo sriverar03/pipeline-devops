@@ -10,7 +10,7 @@ def call(){
   	println params.stage
 	
 	
-	if(params.stage = 'build'){	
+	if(params.stage == 'build'){	
 		stage('TestBuild') {            
 			bat "gradle Build"
 		}
