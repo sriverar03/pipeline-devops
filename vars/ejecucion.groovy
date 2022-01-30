@@ -22,13 +22,11 @@ def call(){
 
 					if(params.builTools == 'gradle')
 					{
-					    def ejecucion = load 'gradle.groovy'
-	                                    ejecucion.call()
+					   gradle()
 					}
 					else
 					{
-					    def ejecucion = load 'maven.groovy'
-	                                    ejecucion.call()
+					   maven()
 					}
 				}
 			}
