@@ -36,11 +36,8 @@ def call(){
 		/*stage('Test Application') {           
 			    bat "curl -X GET http://localhost:8081/rest/mscovid/test?msg=testing"             
 		}*/
-	}
-	else
-	{
-		println 'stage vacio'
 	}*/
+	
         
         
 
