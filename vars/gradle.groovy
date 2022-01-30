@@ -39,7 +39,7 @@ def build(){
 	}
 }
 
-def (sonar){
+def sonar(){
 	stage('SonarQube analysis') {            
                     def scannerHome = tool 'sonar-scanner';
                     withSonarQubeEnv('sonar-server') { 
