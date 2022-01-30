@@ -10,11 +10,15 @@ def call(){
       	str = params.stage.split(';');
   	println str[1]
 	
-	
-	if(params.stage == 'build'){	
+	def buid(){
 		stage('TestBuild') {            
 			bat "gradle Build"
 		}
+	}
+	
+	
+	if(str[0] == 'build'){	
+		build()
 	}
 	
 	if(params.stage == 'sonar'){	
