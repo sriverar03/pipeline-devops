@@ -27,7 +27,7 @@ def call(){
 
 					if(params.builTools == 'gradle')
 					{
-					   gradle(${FOO})
+					   gradle(env.FOO)
 					}
 					else
 					{
