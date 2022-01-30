@@ -5,7 +5,9 @@
 */
 
 def call(){
-  println params.prueba
+	
+	salida = params.prueba.split(';')
+  	println salida
   stage('TestBuild') {            
             		bat "gradle Build"
         }
