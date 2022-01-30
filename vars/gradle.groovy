@@ -7,10 +7,15 @@
 def call(){
 	
 	String[] str
+	String stages = {'build','sonar','run','nexus'}
       	str = params.stage.split(';')
   	//println str.size()
 	
 	//println str.contains('test')
+	
+	for(string stg in stages) { 
+        	 println(stg); 
+      	} 
 	
 	if(str.contains('build') || params.stage.isEmpty() )
 	{	
