@@ -6,8 +6,8 @@
 
 def call(){
 	
-	String[] str;
-      	str = params.stage.split(';');
+	String[] str
+      	str = params.stage.split(';')
   	println str[1]
 	
 	
@@ -15,7 +15,7 @@ def call(){
 	
 	build()
 	sonar()
-	run()
+	run01()
 	nexus()
 	
         
@@ -48,7 +48,7 @@ def sonar(){
         }
 }
 
-def run(){
+def run01(){
 	stage('Run') {           
                 bat "gradle bootRun "           
         }
