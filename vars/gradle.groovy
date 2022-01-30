@@ -8,9 +8,14 @@ def call(){
 	
 	
   	println params.stage
-  stage('TestBuild') {            
-            		bat "gradle Build"
-        }
+	
+	
+	if(params.stage = 'build'){	
+		stage('TestBuild') {            
+			bat "gradle Build"
+		}
+	}
+	
         
         stage('SonarQube analysis') {
             
