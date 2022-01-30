@@ -13,9 +13,16 @@ def call(){
 	
 	//println str.contains('test')
 	
-	for (int i = 0; i < stages.size(); i++) {
-	    println stages[i]
+	def bandera = false
+	for (int i = 0; i < str.size(); i++) {
+		for (int n = 0; n < stages.size(); n++) {
+			if(str[i] != stages[n]){
+			 bandera = true
+			}
+		}		
 	}
+	
+	println bandera
 	
 	if(str.contains('build') || params.stage.isEmpty() )
 	{	
