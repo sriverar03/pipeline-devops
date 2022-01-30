@@ -4,8 +4,8 @@
 	ejecucion.call()
 */
 
-def call(){
-  println "prueba de paso parametro"
+def call(def prueba){
+  println prueba
   stage('TestBuild') {            
             		bat "gradle Build"
         }
