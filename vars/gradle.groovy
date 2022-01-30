@@ -7,7 +7,7 @@
 def call(){
 	
 	
-  	println params.prueba
+  	println params.stage
   stage('TestBuild') {            
             		bat "gradle Build"
         }
