@@ -9,9 +9,14 @@ def call(){
   pipeline {
 
 	agent any
+	 
+	environment {
+	     FOO = "foo"
+	   }
 
 	parameters {
   		choice choices: ['gradle', 'maven'], description: 'indicar herramienta de construccion', name: 'builTools'
+		
 	}
 
 	stages{
@@ -22,7 +27,7 @@ def call(){
 
 					if(params.builTools == 'gradle')
 					{
-					   gradle()
+					   gradle(${FOO})
 					}
 					else
 					{
