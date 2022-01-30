@@ -9,15 +9,14 @@ def call(){
   pipeline {
 
 	agent any
-	 
+	environment {			
+			productionServer = 'production-myproject.mycompany.com'
+		    }
 	
 
 	parameters {
   		choice choices: ['gradle', 'maven'], description: 'indicar herramienta de construccion', name: 'builTools'
-		string(
-			defaultValue: 'prueba',
-			description: 'Enables debug information in the log',
-			name: 'prueba')
+		
 		
 	}
 
@@ -29,7 +28,7 @@ def call(){
 
 					if(params.builTools == 'gradle')
 					{
-					   gradle(prueba)
+					   gradle(productionServer)
 					}
 					else
 					{
