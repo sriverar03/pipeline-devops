@@ -10,12 +10,14 @@ def call(){
 
 	agent any
 	 
-	environment {
-	     FOO = "foo"
-	   }
+	
 
 	parameters {
   		choice choices: ['gradle', 'maven'], description: 'indicar herramienta de construccion', name: 'builTools'
+		string(
+			defaultValue: 'prueba',
+			description: 'Enables debug information in the log',
+			name: 'prueba')
 		
 	}
 
@@ -27,7 +29,7 @@ def call(){
 
 					if(params.builTools == 'gradle')
 					{
-					   gradle(env.FOO)
+					   gradle(prueba)
 					}
 					else
 					{
