@@ -28,7 +28,7 @@ def call(){
 
 					if(params.builTools == 'gradle')
 					{
-					   gradle()
+					   gradle(env.productionServer)
 					}
 					else
 					{
