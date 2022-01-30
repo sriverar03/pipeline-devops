@@ -8,15 +8,12 @@ def call(){
   
   pipeline {
 
-	agent any
-	environment {			
-			productionServer = 'production-myproject.mycompany.com'
-		    }
+	agent any	
 	
 
 	parameters {
   		choice choices: ['gradle', 'maven'], description: 'indicar herramienta de construccion', name: 'builTools'
-		string(defaultValue: 'scriptcrunch', name: 'prueba', trim: true)
+		string(defaultValue: '', name: 'stage', trim: true)
 		
 		
 	}
