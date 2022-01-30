@@ -6,9 +6,9 @@
 
 def call(){
 	
-	String[] str
+	/*String[] str
       	str = params.stage.split(';')
-  	println str[1]
+  	println str[1]*/
 	
 	
 	stage('TestBuild') {            
