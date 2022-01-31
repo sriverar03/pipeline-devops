@@ -10,6 +10,7 @@ def call(){
 	String[] str	
       	str = params.stage.split(';')
 	
+	
 	def bandera = true
 	for (int i = 0; i < str.size(); i++) {
 		switch(str[0]) {
@@ -19,6 +20,7 @@ def call(){
 			case "code":
 			case "run":
 			case "nexus":
+			case "":
 			    bandera = true
 		  
 			 default:
