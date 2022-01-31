@@ -28,6 +28,7 @@ def call(){
 	}
 	
 	println bandera
+	figlet env.GIT_BRANCH
 	if(bandera){
 		if(str.contains('build') || params.stage.isEmpty() )
 		{	
