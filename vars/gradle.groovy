@@ -29,7 +29,32 @@ def call(String pipeliType){
 	figlet params.builTools
 	//println bandera
 	figlet pipeliType
-	if(bandera){
+	
+	
+	
+	if(pipeliType == 'CD')
+	{
+		stage('Download Nexus') {
+			   figlet 'Download Nexus'
+			    bat "curl -L  -u admin:123456 http://7fb6-186-79-184-102.ngrok.io/repository/test-repo/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar --output DevOpsUsach2020-0.0.1.jar" 
+		 }       
+
+		stage('Test Code') { 
+			   figlet 'TestBuild'
+			   bat "gradle Build"
+		}		
+		
+		stage('SonarQube analysis') { 
+				    figlet 'SonarQube'
+				    def scannerHome = tool 'sonar-scanner';
+				    withSonarQubeEnv('sonar-server') { 
+				    bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.sources=src -Dsonar.java.binaries=build " 
+				    }           
+		}
+	
+	}
+	else {
+		if(bandera){
 		if(str.contains('build') || params.stage.isEmpty() )
 		{	
 			stage('TestBuild') { 
@@ -76,6 +101,10 @@ def call(String pipeliType){
 		figlet 'Error de parametros'
 		println 'verifique hay stages ingresados que no existen.'
 	}
+	}
+	
+	
+	
 	
         
         
