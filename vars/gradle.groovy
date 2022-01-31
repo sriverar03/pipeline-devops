@@ -7,9 +7,9 @@
 def call(){
 	
 	String[] str
-	String[] stages = ['build','sonar','run','nexus']
+	//String[] stages = ['build','sonar','run','nexus']
       	str = params.stage.split(';')
-  	//println str.size()
+  	println str.size()
 	
 	def bandera = true
 	for (int i = 0; i < str.size(); i++) {
@@ -27,7 +27,7 @@ def call(){
 		}	
 	}
 	
-	//println bandera
+	println bandera
 	if(bandera){
 		if(str.contains('build') || params.stage.isEmpty() )
 		{	
