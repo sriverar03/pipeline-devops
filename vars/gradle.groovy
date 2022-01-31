@@ -31,7 +31,8 @@ def call(){
 	if(bandera){
 		if(str.contains('build') || params.stage.isEmpty() )
 		{	
-			stage('TestBuild') {            
+			stage('TestBuild') { 
+				figlet 'TestBuild'
 				bat "gradle Build"
 			}
 		}
