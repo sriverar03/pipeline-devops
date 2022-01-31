@@ -18,7 +18,7 @@ def call(){
 			case "sonar":
 			case "run":
 			case "nexus":
-			case " ":
+			case "":
 			    bandera = true
 		  
 			 default:
