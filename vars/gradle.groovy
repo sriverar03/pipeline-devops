@@ -11,19 +11,23 @@ def call(){
       	str = params.stage.split(';')
   	//println str.size()
 	
-	//println str.contains('test')
-	
 	def bandera = true
 	for (int i = 0; i < str.size(); i++) {
-		for (int n = 0; n < stages.size(); n++) {
-			if(str[i] != stages[n]){
-			 bandera = false
-			}
-		}		
+		switch(str[0]) {
+			case "build":		   
+			case "sonar":
+			case "run":
+			case "nexus":
+			    bandera = true
+		  
+			 default:
+			    bandera = false
+			    break
+		}	
 	}
 	
 	//println bandera
-	if(bandera == true || params.stage.isEmpty()){
+	if(bandera){
 		if(str.contains('build') || params.stage.isEmpty() )
 		{	
 			stage('TestBuild') {            
