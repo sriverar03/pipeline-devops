@@ -4,7 +4,7 @@
 	ejecucion.call()
 */
 
-def call(){
+def call(String pipeliType){
 	
 	String[] str
 	//String[] stages = ['build','sonar','run','nexus']
@@ -28,7 +28,7 @@ def call(){
 	}
 	figlet params.builTools
 	//println bandera
-	figlet env.GIT_BRANCH
+	figlet pipeliType
 	if(bandera){
 		if(str.contains('build') || params.stage.isEmpty() )
 		{	
