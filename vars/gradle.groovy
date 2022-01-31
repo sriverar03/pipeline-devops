@@ -7,7 +7,7 @@
 def call(){
 	
 	String[] str
-	String[] stages = ['build','sonar','run','nexus']
+	//String[] stages = ['build','sonar','run','nexus']
       	str = params.stage.split(';')
   	println str.size()
 	println str[0]
@@ -16,11 +16,17 @@ def call(){
 	
 	def bandera = true
 	for (int i = 0; i < str.size(); i++) {
-		for (int n = 0; n < stages.size(); n++) {
-			if(str[i] != stages[n]){
-			 bandera = false
-			}
-		}		
+		switch(str[0]) {
+			case "build":		   
+			case "sonar":
+			case "run":
+			case "nexus":
+			    bandera = true
+		  
+			 default:
+			    bandera = false
+			    break
+		}	
 	}
 	
 	println bandera
