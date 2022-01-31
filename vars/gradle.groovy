@@ -9,8 +9,8 @@ def call(){
 	String[] str
 	//String[] stages = ['build','sonar','run','nexus']
       	str = params.stage.split(';')
-  	println str.size()
-	println "feature cicd"
+  	//println str.size()
+	//println "feature cicd"
 	def bandera = true
 	for (int i = 0; i < str.size(); i++) {
 		switch(str[0]) {
@@ -26,8 +26,8 @@ def call(){
 			    break
 		}	
 	}
-	
-	println bandera
+	figlet params.buildTool
+	//println bandera
 	figlet env.GIT_BRANCH
 	if(bandera){
 		if(str.contains('build') || params.stage.isEmpty() )
