@@ -26,7 +26,7 @@ def call(){
 			    break
 		}	
 	}
-	figlet params.buildTool
+	figlet params.builTools
 	//println bandera
 	figlet env.GIT_BRANCH
 	if(bandera){
