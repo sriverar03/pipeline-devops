@@ -36,7 +36,7 @@ def call(String pipeliType){
 	{
 		stage('Download Nexus') {
 			   figlet 'Download Nexus'
-			    bat "curl -L  -u admin:123456 http://7fb6-186-79-184-102.ngrok.io/repository/test-repo/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar --output DevOpsUsach2020-0.0.1.jar" 
+			    bat "curl -L  -u admin:123456 http://localhost:8081/repository/test-repo/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar --output DevOpsUsach2020-0.0.1.jar" 
 		 }       
 
 		stage('Test Code') { 
