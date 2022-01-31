@@ -10,7 +10,7 @@ def call(){
 	//String[] stages = ['build','sonar','run','nexus']
       	str = params.stage.split(';')
   	println str.size()
-	
+	println "feature cicd"
 	def bandera = true
 	for (int i = 0; i < str.size(); i++) {
 		switch(str[0]) {
@@ -18,7 +18,7 @@ def call(){
 			case "sonar":
 			case "run":
 			case "nexus":
-			case "":
+			case " ":
 			    bandera = true
 		  
 			 default:
