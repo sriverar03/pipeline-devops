@@ -9,7 +9,8 @@ def call(){
 	String[] str
 	String[] stages = ['build','sonar','run','nexus']
       	str = params.stage.split(';')
-  	//println str.size()
+  	println str.size()
+	println str[0]
 	
 	//println str.contains('test')
 	
